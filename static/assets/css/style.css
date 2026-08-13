@@ -337,7 +337,7 @@ Post List
 
 /* Footer */
 
-footer section {
+footer #wrapper {
 	margin: 0 auto;
 	text-align: center;
 	padding: 35px 0 80px 0;
@@ -562,35 +562,31 @@ article #post-list li {
  */
 
 .microblog_conversation {
-	margin-top: 50px;
-	padding-top: 20px;
-	border-top: 1px solid lightgray;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid lightgray;
 }
 
 .microblog_post {
-	padding-top: 20px;
-	padding-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding: 0px;
 }
 
 .microblog_avatar {
-	border-radius: 10px;
-	vertical-align: top;
-	padding: 0px;
-}
-
-.microblog_text {
-	margin-top: 1em;
+  border-radius: 10px;
+  vertical-align: top;
 }
 
 .microblog_time {
-	font-size: 13px;
-	padding-top: 10px;
-	color: gray;
+  font-size: 13px;
+  padding-top: 10px;
+  color: gray;
 }
 
 .microblog_time a {
-	color: gray;
-	text-decoration: none;
+  color: gray;
+  text-decoration: none;
 }
 
 .bookshelf_book {
@@ -611,3 +607,90 @@ div quoteback-component {
 	margin-top: 20px;
 }
 
+/* Table styling */
+.e-content table,
+article table,
+table {
+  --table-border: #e0e0e0;
+  --table-header-bg: #f5f5f5;
+  --table-header-text: #222;
+  --table-row-alt: #fafafa;
+  --table-row-hover: #f0f0f0;
+  --table-text: #333;
+
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95em;
+  border: 1px solid var(--table-border);
+}
+
+.e-content th,
+article th,
+table th {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-text);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.6em 0.9em;
+  border-bottom: 2px solid var(--table-border);
+}
+
+.e-content td,
+article td,
+table td {
+  padding: 0.55em 0.9em;
+  border-bottom: 1px solid var(--table-border);
+  color: var(--table-text);
+}
+
+.e-content tr:last-child td,
+article tr:last-child td,
+table tr:last-child td {
+  border-bottom: none;
+}
+
+.e-content tbody tr:nth-child(even),
+article tbody tr:nth-child(even),
+table tbody tr:nth-child(even) {
+  background-color: var(--table-row-alt);
+}
+
+.e-content tbody tr:hover,
+article tbody tr:hover,
+table tbody tr:hover {
+  background-color: var(--table-row-hover);
+}
+
+/* Rounded corners on the outer edge */
+.e-content table,
+article table,
+table {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Horizontal scroll for wide tables on small screens */
+@media (max-width: 600px) {
+  .e-content table,
+  article table,
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Dark mode (follows OS/browser setting) */
+@media (prefers-color-scheme: dark) {
+  .e-content table,
+  article table,
+  table {
+    --table-border: #3a3a3a;
+    --table-header-bg: #2a2a2a;
+    --table-header-text: #eee;
+    --table-row-alt: #232323;
+    --table-row-hover: #2c2c2c;
+    --table-text: #ccc;
+  }
+}
